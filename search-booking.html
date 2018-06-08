@@ -35,74 +35,98 @@
 
     <script>
         function search() {
-            document.getElementById('search-booking-table').style.display=""; 
+            document.getElementById('search-booking-table').style.display = "";
         }
     </script>
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="justify-content-end collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="facilityDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Facility
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="facilityDropdown">
+                        <a class="dropdown-item" href="#">Add Facility</a>
+                        <a class="dropdown-item" href="#">Search Facility</a>
+                        <a class="dropdown-item" href="#">Update Facility</a>
+                        <a class="dropdown-item" href="#">Delete Facility</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="bookingDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Booking
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="bookingDropdown">
+                        <a class="dropdown-item" href="#">Add Booking</a>
+                        <a class="dropdown-item" href="#">Search Booking</a>
+                        <a class="dropdown-item" href="#">Update Booking</a>
+                        <a class="dropdown-item" href="#">Delete Booking</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="usersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Users
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="usersDropdown">
+                        <a class="dropdown-item" href="#">Add User</a>
+                        <a class="dropdown-item" href="#">Search User</a>
+                        <a class="dropdown-item" href="#">Update User</a>
+                        <a class="dropdown-item" href="#">Delete User</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Register</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--End of template-->
+
+    <h1 style="text-align: center;">Search Booking</h1>
+    <hr>
     <div class="container">
-        <div class="jumbotron" style="background-color: transparent; text-align:center; vertical-align: bottom;">
-            <h1>Search Booking</h1>
-            <p class="text-muted">Search for your bookings and make changes!</p>
-        </div>
-        <hr width=40%>
-        <div style="margin: 0px auto; width: 500px;">
-            <div class="row">
-                <div class="col-sm-4 ">
-                    <label class="control-label float-right" style="margin:auto;">Facility name: </label>
-                </div>
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <select id="facility-name" class="form-control">
-                            <option value="Facility1">Facility1</option>
-                            <option value="Facility2">Facility2</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+        <card class="card mt-5">
+            <form action="POST" method="post" class="col-12 card-body">
 
-            <div class="row">
-                <div class="col-sm-4 ">
-                    <label class="control-label float-right" style="margin:auto;">Start Date: </label>
+                <div class="input-group mb-3">
+                    <select required id="facility-type" class="form-control">
+                        <option value="" selected disabled>Select your facility Type</option>
+                        <option value="Facility1">Facility Type 1</option>
+                        <option value="Facility2">Facility Type 2</option>
+                    </select>
                 </div>
-                <div class="col-sm-8">
-                    <div class="input-group date" data-provide="datepicker">
-                        <input id="start-date" name="start-date" placeholder="DD-MMM-YYYY" type="text" class="form-control">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
+                <div class="input-group mb-3 date input-daterange" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="Choose Start Date">
+                    <div class="input-group-addon">to</div>
+                    <input type="text" class="form-control" placeholder="Choose Start Date">
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-sm-4 ">
-                    <label class="control-label float-right" style="margin:auto;">End Date: </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" aria-label="Username" aria-describedby="InputGroup-sizing-default" placeholder="Username"
+                    />
                 </div>
-                <div class="col-sm-8">
-                    <div class="input-group date" data-provide="datepicker">
-                        <input id="end-date" name="end-date" placeholder="DD-MMM-YYYY" type="text" class="form-control">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" onclick="search()">Search</button>
                 </div>
-            </div>
-
-            <div class="row" style="margin-top: 10px">
-                <div class="col-sm-4 ">
-                    <label class="control-label float-right" style="margin:auto;">Username: </label>
-                </div>
-                <div class="col-sm-8">
-                    <div class="form-group">
-                        <input type="username" class="form-control" id="username">
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn btn-primary" style="float: right; margin-top: 10px" onclick="search()">Search</button>
-        </div>
+            </form>
+        </card>
 
         <table id="search-booking-table" class="table table-hover" style="margin-top: 100px; display: none">
             <thead>
@@ -122,7 +146,7 @@
                     <td class="align-middle">Hello</td>
                     <td class="align-middle">
                         <button type="button" class="btn btn-secondary">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -132,7 +156,7 @@
                     <td class="align-middle">World</td>
                     <td class="align-middle">
                         <button type="button" class="btn btn-secondary">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                     </td>
                 </tr>
                 <tr>
@@ -142,9 +166,52 @@
                     <td class="align-middle">!</td>
                     <td class="align-middle">
                         <button type="button" class="btn btn-secondary">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">Delete</button>
                     </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirm Delete</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p>Booking deleted</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <nav class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
+
 </body>
