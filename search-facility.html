@@ -85,32 +85,27 @@
     <div class="container">
         <card class="card mt-5">
             <form action="" method="post" class="col-12 card-body">
+
                 <div class="input-group mb-3">
                     <select required id="facility-type" class="form-control">
                         <option value="" selected disabled>Select your facility type</option>
                         <option value="Type1">Type1</option>
                         <option value="Type2">Type2</option>
                     </select>
-                </div>
+                    <label class="form-check-label">
 
-                <div class="input-group mb-3">
-                    <select required id="facility-name" class="form-control">
-                        <option value="" selected disabled>Select your facility</option>
-                        <option value="Facility1">Facility1</option>
-                        <option value="Facility2">Facility2</option>
-                    </select>
                 </div>
-                <div class="input-group date input-daterange" data-provide="datepicker">
-                    <input type="text" class="form-control" placeholder="Choose Start Date">
-                    <div class="input-group-addon">to</div>
-                    <input type="text" class="form-control" placeholder="Choose Start Date">
-                </div>
-                <div class="form-check">
+                <div class="form-check mb-3">
                     <label class="form-check-label">
                         <input class="form-check-input" type="checkbox" value=""> Search for unusable facilities
                     </label>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="">Search</button>
+                <div class="input-group date input-daterange mb-3" data-provide="datepicker">
+                    <input type="text" class="form-control" placeholder="Choose Start Date">
+                    <div class="input-group-addon">to</div>
+                    <input type="text" class="form-control" placeholder="Choose Start Date">
+                </div>
+                <button type="submit" class="btn btn-primary mb-3" onclick="">Search</button>
             </form>
         </card>
 
@@ -166,4 +161,23 @@
             </tbody>
         </table>
     </div>
+    <nav class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#">Previous</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">3</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+        </ul>
+    </nav>
 </body>
