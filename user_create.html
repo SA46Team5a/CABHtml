@@ -14,6 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 
+    <script>
+    $('.datepicker').datepicker({
+    format: 'mm/dd/yyyy',
+    startDate: '-3d'
+});
+    </script>
+
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -88,7 +95,7 @@
                     <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" placeholder="Phone Number">
                 </div>
                 <div class="input-group date mb-3" data-provide="datepicker">
-                    <input id="start-date" name="start-date" placeholder="DD/MM/YYYY" type="text" class="form-control" date-data-format="dd-mm-yyyy">
+                    <input id="birthday" name="birthday" placeholder="DD/MM/YYYY" type="text" class="datepicker form-control" data-date-format="dd/mm/yyyy">
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
