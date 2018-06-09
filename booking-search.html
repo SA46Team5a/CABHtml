@@ -25,11 +25,12 @@
             var date_input = $('input[name="date"]'); //our date input has the name "date"
             var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
             date_input.datepicker({
-                format: 'mm/dd/yyyy',
+                format: 'dd/mm/yyyy',
                 container: container,
                 todayHighlight: true,
                 autoclose: true,
             })
+            $.fn.datepicker.defaults.format = "dd/mm/yyyy";
         })
     </script>
 
@@ -118,7 +119,7 @@
                     <div class="input-group-addon">to</div>
                     <input type="text" class="form-control" placeholder="Choose Start Date">
                 </div>
-                <div class="input-group mb-3">
+                <div class="input-group mb-3" hidden>
                     <input type="text" class="form-control" aria-label="Username" aria-describedby="InputGroup-sizing-default" placeholder="Username"
                     />
                 </div>
